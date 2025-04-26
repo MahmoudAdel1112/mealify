@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="/assets/responsive.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Physics2DPlugin.min.js"></script>
+  </head>
+  <body>
+    <div class="container-global">
+      <!-- Header Section -->
+
+      <div class="container-header">
+        <header class="header-of-nav">
+          <!-- Nav Section -->
+          <nav class="nav-pc">
+            <h1 class="logo">Mealify<span class="logo-dot">.</span></h1>
+            <ul>
+              <li class="nav-pc-li">
+                <a href="#home" class="nav-link active">Home</a>
+              </li>
+              <li class="nav-pc-li">
+                <a href="#chefs-section" class="nav-link">Chefs</a>
+              </li>
+              <li class="nav-pc-li">
+                <a href="#gal-section" class="nav-link">Gallery</a>
+              </li>
+              <li class="nav-pc-li">
+                <a href="#contact-section" class="nav-link">Contact</a>
+              </li>
+            </ul>
+            <i class="fa-solid fa-moon"></i>
+          </nav>
+          <div class="container-nav">
+            <h1 class="logo">Mealify<span class="logo-dot">.</span></h1>
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-bars hidden"></i>
+          </div>
+        </header>
+      </div>
+      <nav class="nav-mobile hidden">
+        <div class="navbar-overlay"></div>
+        <i class="fa-solid fa-x"></i>
+        <ul>
+          <li class="nav-mobile-li">
+            <a href="#home" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-mobile-li">
+            <a href="#chefs-section" class="nav-link">Chefs</a>
+          </li>
+          <li class="nav-mobile-li">
+            <a href="#gal-section" class="nav-link">Gallery</a>
+          </li>
+          <li class="nav-mobile-li">
+            <a href="#contact-section" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="container-hero section">
+        <div class="hero home" id="home">
+          <!-- Hero Text -->
+          <div class="hero-text">
+            <h1>Enjoy Your Healthy Delicious Food</h1>
+            <p>
+              Sed autem laudantium dolores. Voluptatem itaque ea consequatur
+              eveniet. Eum quas beatae cumque eum quaerat.
+            </p>
+            <div class="hero-text-btns">
+              <button class="book-btn">Book a Table</button>
+              <a
+                href="https://acmedia.netlify.app"
+                target="_blank"
+                class="watch-link"
+              >
+                <div class="icon-container">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                Watch a Video
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Image -->
+          <div class="hero-img">
+            <img src="assets/hero-img.png" alt="" class="shake-image" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Chefs Section -->
+      <section class="chefs-section section" id="chefs-section">
+        <div class="chefs-text title">
+          <h4 class="h-title">chefs</h4>
+          <p class="p-title">
+            Our <span class="span-title">Proffesional</span> Chefs
+          </p>
+        </div>
+        <div id="chefsTemplateContainer" class="chefsTemplateContainer"></div>
+      </section>
+
+      <!-- Gallary Section -->
+      <section class="gal-section section" id="gal-section">
+        <div class="gal-container"></div>
+        <div class="gal-title title">
+          <h3 class="h-title">Gallery</h3>
+          <h1 class="p-title">
+            Check <span class="span-title">our Gallary</span>
+          </h1>
+        </div>
+        <!-- <template></template> -->
+        <div class="gal-cards-container"></div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact-section section" id="contact-section">
+        <div class="contact-container">
+          <div class="contact-title title">
+            <h1 class="h-title">Contact</h1>
+            <p class="p-title">
+              Need help ? <span class="span-title">Contact us</span>
+            </p>
+          </div>
+          <div id="map"></div>
+          <div class="info-card-container"></div>
+          <div class="form-container">
+            <form action="" class="form-contact">
+              <div class="form-name-email-wrapper">
+                <input type="text" placeholder="Your name" />
+                <input type="email" placeholder="Your Email" />
+              </div>
+              <div class="subject-container">
+                <input
+                  type="text"
+                  name="subject"
+                  id=""
+                  placeholder="Subject"
+                  class="subject"
+                />
+              </div>
+              <div class="message-container">
+                <textarea
+                  name=""
+                  id=""
+                  placeholder="Message"
+                  class="message"
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="first">
+            <div class="logo-container-footer">
+              <div class="logo-img">
+                <picture>
+                  <img src="assets/favicon.png" alt="" />
+                </picture>
+              </div>
+              <div class="logo-text">
+                <h1 class="logo">Mealify<span class="logo-dot">.</span></h1>
+              </div>
+            </div>
+            <div class="p-footer">
+              <p>
+                Mealify is a restaurant landing page that offers a delicious
+                dining experience to its customers.
+              </p>
+            </div>
+            <div class="social">
+              <h3>Social Media</h3>
+              <div>
+                <ul>
+                  <li><i class="fa-solid fa-x"></i></li>
+                  <li><i class="fa-brands fa-facebook-f"></i></li>
+                  <li><i class="fa-brands fa-instagram"></i></li>
+                  <li><i class="fa-brands fa-linkedin"></i></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="second">
+            <div>
+              <div>
+                <h3>Subscribe to our Newsletter</h3>
+                <p>
+                  Don't miss out on our latest menu updates and exclusive offers
+                  - join our newsletter today and stay up-to-date with all
+                  things Mealify!
+                </p>
+              </div>
+              <form action="" class="form-footer">
+                <div class="form-container-footer">
+                  <input
+                    type="email"
+                    name="emial"
+                    id=""
+                    placeholder="Enter your Email"
+                    class="news-letter-input"
+                  />
+                  <input
+                    type="submit"
+                    value="Subscribe"
+                    class="submit-btn-footer"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="quick-links">
+              <ul>
+                <li>Menu</li>
+                <li>Promo</li>
+                <li>About Us</li>
+                <li>Contact</li>
+                <li>Testimonial</li>
+                <li>Our Partners</li>
+              </ul>
+            </div>
+          </div>
+          <div class="third">
+            <div class="container-third">
+              <i class="fa-solid fa-location-dot"></i>
+              <span> A108 Adam Street, New York, NY 535022 </span>
+            </div>
+            <div class="container-third">
+              <i class="fa-solid fa-envelope"></i>
+              <span>contact@example.com</span>
+            </div>
+            <div class="container-third">
+              <i class="fa-solid fa-phone"></i>
+              <span>+1 5589 55488 55</span>
+            </div>
+          </div>
+        </div>
+        <p class="attribution-me">
+          Have a question?
+          <a
+            href="https://wa.me/201064877242"
+            target="_blank"
+            class="whatsapp-link"
+            >Chat with me on WhatsApp</a
+          >.<br />
+          Or, visit my
+          <a
+            href="https://www.upwork.com/freelancers/~015f3b76561593c6c1"
+            target="_blank"
+            class="upwork-link"
+            >Upwork profile</a
+          >
+          to hire me.
+        </p>
+      </footer>
+    </div>
+
+    <!-- Templates -->
+    <!-- Chefs Card Templates -->
+    <template id="ChefsCardTemplate">
+      <div class="card-container-chef">
+        <picture class="chefs-img-container">
+          <img src="" alt="" class="chefs-img" />
+        </picture>
+        <div class="card-text">
+          <h2 class="chefs-name"></h2>
+          <p class="chefs-title"></p>
+          <p class="chefs-p"></p>
+        </div>
+      </div>
+    </template>
+    <!-- Gal card Template -->
+    <template class="gal-card">
+      <div class="gal-card-container">
+        <div class="picture-container">
+          <div class="layer-gal">
+            <h2 class="layer-gal-h2"></h2>
+            <p class="layer-gal-p"></p>
+          </div>
+          <img src="" alt="" class="gal-card-img" />
+        </div>
+      </div>
+    </template>
+    <!-- Info Template -->
+    <template class="info-card-template">
+      <div class="info-card">
+        <div class="icon-circle">
+          <i class="fa-solid"> </i>
+        </div>
+        <div>
+          <h5 class="h-info-card"></h5>
+          <p class="p-info-card"></p>
+        </div>
+      </div>
+    </template>
+
+    <!-- Scripts-->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="/scripts/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/36a61fd6a0.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
